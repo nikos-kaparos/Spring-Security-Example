@@ -1,1 +1,51 @@
-Secyrity config that let you do any http mehod with authentication with user that exist in database (PostgreSQL) db run in docker container
+# Spring Security Example
+
+This repository demonstrates a basic setup of Spring Security, showcasing fundamental authentication and authorization mechanisms within a Spring Boot application.
+
+## Installation
+
+Clone the repository
+```
+git clone https://github.com/nikos-kaparos/Spring-Security-Example.git
+```
+
+## Build the project with Maven:
+```
+Copy code
+mvn clean package
+```
+
+## Usage
+
+First crate table users in database
+```sql
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
+```
+Then insert the users
+```sql
+INSERT INTO user (id, username, password) VALUES (1, 'your_username', 'your_passwrd');
+```
+Run the container
+```bash
+docker-composae up -d
+```
+Check the database
+```bash
+docker exec -it my_postgres_db psql -U myuser -d mydatabase
+\dt
+```
+Login open browser to http://localhost:8080 and login
+## Technologies
+Java 21
+
+Maven 3.9.9
+
+Docker 27.2.1
+
+Docker compose 1.29.2
+
+PostgreSQL 16.3
