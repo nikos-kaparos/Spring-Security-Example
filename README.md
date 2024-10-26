@@ -38,7 +38,7 @@ Check the database
 docker exec -it my_postgres_db psql -U myuser -d mydatabase
 \dt
 ```
-Login open browser to http://localhost:8080 and login
+Login open browser to http://localhost:8080 login and you are free to do Http methods POST GET e.t.c
 ## Technologies
 Java 21
 
