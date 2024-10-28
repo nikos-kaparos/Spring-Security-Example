@@ -12,7 +12,7 @@ git clone https://github.com/nikos-kaparos/Spring-Security-Example.git
 ## Build the project with Maven:
 ```
 Copy code
-mvn clean package
+mvn clean package -DskipTests
 ```
 
 ## Usage
