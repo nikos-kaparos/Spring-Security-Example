@@ -32,7 +32,7 @@ public class SecurityConfig {
                 //
                 .authorizeHttpRequests(request -> request.anyRequest().authenticated())
                 //Enable form Login for browser
-                .formLogin(Customizer.withDefaults())
+                //.formLogin(Customizer.withDefaults())
                 // for http request
                 .httpBasic(Customizer.withDefaults())
                 .logout(Customizer.withDefaults())
