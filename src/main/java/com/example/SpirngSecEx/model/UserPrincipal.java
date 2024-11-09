@@ -18,20 +18,19 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-
         String role;
 
         if (user.getUsername().equals("nikos")){
             role = "ADMIN";
-            System.out.println("role equal" + role);
+            System.out.println("role equal\n" + role);
             return Collections.singleton(new SimpleGrantedAuthority (role));
         }else if (user.getUsername().equals("kaparos")){
             role = "SYSTEM";
-            System.out.println("role equal" + role);
+            System.out.println("role equal\n" + role);
             return Collections.singleton(new SimpleGrantedAuthority (role));
         }else
             role = "USER";
-            System.out.println("role equal" + role);
+            System.out.println("role equal\n" + role);
             return Collections.singleton(new SimpleGrantedAuthority("USER"));
     }
 

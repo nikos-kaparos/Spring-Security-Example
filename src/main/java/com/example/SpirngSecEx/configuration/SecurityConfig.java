@@ -29,9 +29,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(customizer -> customizer.disable())
-                //
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/").permitAll()
+                        .requestMatchers("/admin/**").hasAuthority("ADMIN")
+                        .requestMatchers("/system/**").hasAuthority("SYSTEM")
                         .anyRequest().authenticated())
                 //Enable form Login for browser
                 .formLogin(Customizer.withDefaults())
@@ -41,8 +42,6 @@ public class SecurityConfig {
                 .sessionManagement(session ->
                         // IF_REQUIRED (Προεπιλεγμένη επιλογή): Το Spring Security θα δημιουργήσει ένα HttpSession μόνο αν είναι απαραίτητο (π.χ., όταν ένας χρήστης συνδέεται με formLogin).
                         session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED));
-
-
         return http.build();
     }
 
