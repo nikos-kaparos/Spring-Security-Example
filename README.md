@@ -8,11 +8,12 @@ Clone the repository
 ```
 git clone https://github.com/nikos-kaparos/Spring-Security-Example.git
 ```
-
+<!--
 ## Build the project with Maven:
 ```
 mvn clean package -DskipTests
 ```
+-->
 
 ## Usage
 Run the containers
