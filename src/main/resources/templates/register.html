@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+</head>
+<body>
+<h1>Register</h1>
+<form action="/register" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="role">Role:</label>
+    <select id="role" name="role">
+        <option value="seller">Seller</option>
+        <option value="customer">Customer</option>
+    </select><br><br>
+
+    <button type="submit">Register</button>
+</form>
+
+<!-- Μήνυμα λάθους
+<p style="color: red;">${error}</p>
+-->
+</body>
+</html>
