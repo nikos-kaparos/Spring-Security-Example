@@ -2,9 +2,10 @@ CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(255),
     password VARCHAR(255),
-    role VARCHAR(255)
+    role VARCHAR(255),
+    enabled BOOLEAN
     );
 
-INSERT INTO users (id, username, password, role) VALUES (0, 'nikos', '1234', 'admin');
-INSERT INTO users (id, username, password, role) VALUES (1, 'kaparos', 'qwer', 'system');
+INSERT INTO users (id, username, password, role, enabled) VALUES (0, 'nikos', '1234', 'admin', TRUE);
+INSERT INTO users (id, username, password, role, enabled) VALUES (1, 'kaparos', 'qwer', 'system', TRUE);
 

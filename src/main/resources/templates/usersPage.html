@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>users</title>
+</head>
+<body>
+<h1>Users</h1>
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.role}"></td>
+        <td th:text="${user.enabled ? 'Enabled' : 'Disabled'}"></td>
+        <td>
+            <form th:action="@{'/admin/users/' + ${user.id} + '/enable'}" method="post">
+                <input type="hidden" name="enabled" th:value="${!user.enabled}" />
+                <button type="submit" th:text="${user.enabled ? 'Disable' : 'Enable'}"></button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

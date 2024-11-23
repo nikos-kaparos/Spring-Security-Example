@@ -1,9 +1,6 @@
 package com.example.SpirngSecEx.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Users {
@@ -13,6 +10,8 @@ public class Users {
     private String username;
     private String password;
     private String role;
+    //@Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
+    private boolean enabled;
 
     public int getId() {
         return id;
@@ -44,6 +43,14 @@ public class Users {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     @Override

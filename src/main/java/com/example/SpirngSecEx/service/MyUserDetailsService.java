@@ -22,6 +22,10 @@ public class MyUserDetailsService implements UserDetailsService {
             System.out.println("Den brika user");
             throw new UsernameNotFoundException("Den brika user");
         }
+        if (!user.isEnabled()){
+            System.out.println("User not enabled");
+            throw new UsernameNotFoundException("User not enabled");
+        }
         return new UserPrincipal(user);
     }
 
