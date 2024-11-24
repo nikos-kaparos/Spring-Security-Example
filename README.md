@@ -21,12 +21,15 @@ Run the containers
 docker composae up --build
 ```
 Check the database
+Connect to container that host the database
 ```bash
 docker exec -it my_postgres_db psql -U myuser -d mydatabase
 ```
+Check the database
 ```bash
 \dt
 ```
+Get all users from users table 
 ```bash
 SELECT * FROM users;
 ```
