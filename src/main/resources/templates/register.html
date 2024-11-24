@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +22,15 @@
     </select><br><br>
 
     <button type="submit">Register</button>
+
 </form>
 
-<!-- Μήνυμα λάθους
-<p style="color: red;">${error}</p>
--->
+<!-- Μήνυμα λάθους -->
+<th:block>
+    <script th:if="${error != null}">
+        alert("This username is already in use. Choose please another one.")
+    </script>
+</th:block>
+
 </body>
 </html>

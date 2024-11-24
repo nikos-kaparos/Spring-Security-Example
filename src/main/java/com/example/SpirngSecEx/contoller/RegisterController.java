@@ -30,14 +30,6 @@ public class RegisterController {
     @PostMapping("/register")
     public String registerUser(@ModelAttribute("user") Users user,
                                @RequestParam("role") String role, Model model) {
-//        try {
-//            UserDetails existingUser = userDetailsService.loadUserByUsername(user.getUsername());
-//            model.addAttribute("error", "This username is already taken");
-//            return "register";
-//
-//        }catch (UsernameNotFoundException e){
-//            System.out.println("Username not found, proceeding with registration");
-//        }
         if (userRepo.existsByUsername(user.getUsername())) {
             model.addAttribute("error", "This username is already taken");
             System.out.println("Error, this username is already taken");
