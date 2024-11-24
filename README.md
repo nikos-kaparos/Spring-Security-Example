@@ -28,7 +28,7 @@ docker exec -it my_postgres_db psql -U myuser -d mydatabase
 \dt
 ```
 ```bash
-SELECT FROM * users;
+SELECT * FROM users;
 ```
 Login open browser to http://localhost:8080 login note that has RBAC (role based access control).
 
