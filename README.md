@@ -33,7 +33,6 @@ SELECT FROM * users;
 Login open browser to http://localhost:8080 login note that has RBAC (role based access control).
 
 ## Features
-## Features
 
 -   **Admin User**: An admin user is automatically created in the Docker container's database. The admin can view new users who sign up in the system.
 -   **Unique Usernames**: The app does not allow users to register with the same username. If a username already exists, registration is prevented.
