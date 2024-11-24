@@ -20,7 +20,8 @@ Run the containers
 ```bash
 docker composae up --build
 ```
-Check the database
+Check the database:
+
 Connect to container that host the database
 ```bash
 docker exec -it my_postgres_db psql -U myuser -d mydatabase
