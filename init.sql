@@ -7,5 +7,5 @@ CREATE TABLE IF NOT EXISTS users (
     );
 
 INSERT INTO users (id, username, password, role, enabled) VALUES (0, 'nikos', '1234', 'admin', TRUE);
-INSERT INTO users (id, username, password, role, enabled) VALUES (1, 'kaparos', 'qwer', 'system', TRUE);
+
 

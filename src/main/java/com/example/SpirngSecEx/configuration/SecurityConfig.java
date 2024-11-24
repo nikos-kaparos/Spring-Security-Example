@@ -33,7 +33,7 @@ public class SecurityConfig {
                         .requestMatchers("/").permitAll()
                         .requestMatchers("/register/**").permitAll()
                         .requestMatchers("/admin/**").hasAuthority("ADMIN")
-                        .requestMatchers("/system/**").hasAuthority("SYSTEM")
+//                        .requestMatchers("/system/**").hasAuthority("SYSTEM")
                         .anyRequest().authenticated())
                 //Enable form Login for browser
                 .formLogin(Customizer.withDefaults())

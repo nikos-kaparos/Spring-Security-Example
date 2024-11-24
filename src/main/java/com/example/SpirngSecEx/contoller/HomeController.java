@@ -49,14 +49,14 @@ public class HomeController {
         return "adminPage";
     }
 
-    @GetMapping("/system")
-    public String systemPanel(Model model) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-        System.out.println("User authorities" + authorities);
-        model.addAttribute("title", "system");
-        return "systemPage";
-    }
+//    @GetMapping("/system")
+//    public String systemPanel(Model model) {
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+//        System.out.println("User authorities" + authorities);
+//        model.addAttribute("title", "system");
+//        return "systemPage";
+//    }
 }
 
 

@@ -1,6 +1,7 @@
 package com.example.SpirngSecEx.contoller;
 
 import com.example.SpirngSecEx.model.Users;
+import com.example.SpirngSecEx.repository.UserRepo;
 import com.example.SpirngSecEx.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,17 +24,24 @@ public class RegisterController {
         return "register";
     }
 
+    @Autowired
+    private UserRepo userRepo;
+
     @PostMapping("/register")
     public String registerUser(@ModelAttribute("user") Users user,
                                @RequestParam("role") String role, Model model) {
-        try {
-            UserDetails existingUser = userDetailsService.loadUserByUsername(user.getUsername());
-            if(existingUser.getUsername().equals(user.getUsername())){
-                model.addAttribute("error", "This username is already taken");
-                return "register";
-            }
-        }catch (UsernameNotFoundException e){
-
+//        try {
+//            UserDetails existingUser = userDetailsService.loadUserByUsername(user.getUsername());
+//            model.addAttribute("error", "This username is already taken");
+//            return "register";
+//
+//        }catch (UsernameNotFoundException e){
+//            System.out.println("Username not found, proceeding with registration");
+//        }
+        if (userRepo.existsByUsername(user.getUsername())) {
+            model.addAttribute("error", "This username is already taken");
+            System.out.println("Error, this username is already taken");
+            return "register";
         }
         userDetailsService.saveUser(user);
         System.out.println("user: " + user.getUsername() + " saved");
