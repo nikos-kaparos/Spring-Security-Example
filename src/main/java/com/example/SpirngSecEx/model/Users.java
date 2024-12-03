@@ -10,7 +10,6 @@ public class Users {
     private String username;
     private String password;
     private String role;
-    //@Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
     private boolean enabled;
 
     public int getId() {

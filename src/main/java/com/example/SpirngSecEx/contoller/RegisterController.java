@@ -24,13 +24,10 @@ public class RegisterController {
         return "register";
     }
 
-    @Autowired
-    private UserRepo userRepo;
-
     @PostMapping("/register")
     public String registerUser(@ModelAttribute("user") Users user,
                                @RequestParam("role") String role, Model model) {
-        if (userRepo.existsByUsername(user.getUsername())) {
+        if (userDetailsService.existByUser(user.getUsername())) {
             model.addAttribute("error", "This username is already taken");
             System.out.println("Error, this username is already taken");
             return "register";

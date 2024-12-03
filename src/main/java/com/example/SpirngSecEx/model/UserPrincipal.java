@@ -1,13 +1,9 @@
 package com.example.SpirngSecEx.model;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
-
 public class UserPrincipal implements UserDetails {
 
     private Users user;
@@ -21,25 +17,12 @@ public class UserPrincipal implements UserDetails {
 
         if (user.getRole().equals("admin")) {
             return Collections.singletonList(new SimpleGrantedAuthority("ADMIN"));
-        } else if (user.getRole().equals("system")) {
-            return Collections.singletonList(new SimpleGrantedAuthority("SYSTEM"));
-        }else
+        } else if (user.getRole().equals("donor")) {
+            return Collections.singletonList(new SimpleGrantedAuthority("DONOR"));
+        }else if (user.getRole().equals("seller")) {
+            return Collections.singletonList(new SimpleGrantedAuthority("SELLER"));
+        }
             return Collections.singletonList(new SimpleGrantedAuthority("USERS"));
-
-//        String role;
-//
-//        if (user.getUsername().equals("nikos")){
-//            role = "ADMIN";
-//            System.out.println("role equal\n" + role);
-//            return Collections.singleton(new SimpleGrantedAuthority (role));
-//        }else if (user.getUsername().equals("kaparos")){
-//            role = "SYSTEM";
-//            System.out.println("role equal\n" + role);
-//            return Collections.singleton(new SimpleGrantedAuthority (role));
-//        }else
-//            role = "USER";
-//            System.out.println("role equal\n" + role);
-//            return Collections.singleton(new SimpleGrantedAuthority("USER"));
     }
 
     @Override
