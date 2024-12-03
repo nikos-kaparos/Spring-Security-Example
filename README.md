@@ -18,7 +18,7 @@ mvn clean package -DskipTests
 ## Usage
 Run the containers
 ```bash
-docker composae up --build
+docker compose up --build
 ```
 Check the database:
 
