@@ -32,10 +32,7 @@ public class MyUserDetailsService implements UserDetailsService {
         return new UserPrincipal(user);
     }
 
-    private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
     public Users saveUser(Users user) {
-        user.setPassword(encoder.encode(user.getPassword()));
         System.out.println("user: " + user.getUsername() + " saved");
         return repo.save(user);
     }
