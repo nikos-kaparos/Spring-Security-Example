@@ -35,7 +35,7 @@ Get all users from users table
 ```bash
 SELECT * FROM users;
 ```
-Login open browser to http://localhost:8080 login note that has RBAC (role based access control).
+Login open browser to http://localhost:8080 login note that has RBAC (role based access control)ans BCrypt Password Encoder.
 
 ## Features
 
